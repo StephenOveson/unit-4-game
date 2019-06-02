@@ -44,7 +44,7 @@ $(document).ready(function () {
 
     $('.press-any').html('Instructions:\nYou will be given a random number of Crystals to collect in this game.\nTo collect crystals you will need to click on any of the 4 images of crystals present. Each image will represent a different random amount.\nThe goal is to collect the same amount of crystals as is needed without going over or you lose!\n\nGood Luck!\n\nPress Any Key to Start!')
 
-
+    $('.instructions').html('Instructions:\nClick an image to collect crystals.\nEach image is a random amount and a new random amount each round.\nTry to get the crystals needed exactly or you lose!')
 
     function resetGame() {
         userScoreDisplay.empty();
