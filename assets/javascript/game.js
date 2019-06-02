@@ -1,8 +1,8 @@
-$(document).ready(function (){
+$(document).ready(function () {
 
     let userScoreDisplay = $('#user-score')
     let userScore = 0;
-    let crystalTotal =  Math.floor(Math.random() * 101) + 19;
+    let crystalTotal = Math.floor(Math.random() * 101) + 19;
     let crystal1 = Math.floor(Math.random() * 12) + 1;
     let num1 = parseInt(crystal1);
     let crystal2 = Math.floor(Math.random() * 12) + 1;
@@ -15,41 +15,50 @@ $(document).ready(function (){
     let userWins = 0;
 
 
-    
+
     userScoreDisplay.html(userScore);
     $('#game-total').html(crystalTotal);
     console.log(crystalTotal)
-    
-    $('#crystal1').on('click', function(){
+
+    $('#crystal1').on('click', function () {
         console.log(crystal1)
         userScoreDisplay.html(userScore = userScore + crystal1);
+        gameOver()
     });
 
-    $('#crystal2').on('click', function(){
+    $('#crystal2').on('click', function () {
         console.log(crystal2)
         userScoreDisplay.html(userScore = userScore + crystal2);
+        gameOver()
     });
 
-    $('#crystal3').on('click', function(){
+    $('#crystal3').on('click', function () {
         console.log(crystal3)
         userScoreDisplay.html(userScore = userScore + crystal3);
+        gameOver()
     });
 
-    $('#crystal4').on('click', function(){
+    $('#crystal4').on('click', function () {
         console.log(crystal4)
         userScoreDisplay.html(userScore = userScore + crystal4);
+        gameOver()
     });
 
-    if (userScore > crystalTotal) {
-        $('congratulations').html('You lose');
-        $('losses').html(userLosses + 1);
-        resetGame();
-    } else if (userScore = crystalTotal) {
-        $('congratulations').html('You Won!');
-        $('wins').html(userWins + 1);
-        resetGame();
-    } else {
-        return;
+    $('#congratulation').html()
+    $('#wins').html(userWins)
+    $('#losses').html(userLosses)
+
+    function gameOver() {
+        if (userScore > crystalTotal) {
+            $('#congratulation').html('You lose');
+            $('#losses').html(userLosses++);
+            // resetGame();
+        } else if (userScore === crystalTotal) {
+            $('#congratulation').html('You Won!');
+            $('#wins').html(userWins++);
+            // resetGame();
+        } else {
+            return;
+        }
     }
-    
-}) ;
+});
