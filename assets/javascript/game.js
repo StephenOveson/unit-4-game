@@ -14,13 +14,13 @@ $(document).ready(function () {
     let gameStart = false;
     let hiddenGame = false;
 
-    $(document).on('keyup', function () {
+    $(document).on('click', function () {
         gameStart = true;
         hiddenGame = true;
     });
 
     function pressAny() {
-        document.onkeyup = function () {
+        document.onclick = function () {
             if (gameStart = false) {
                 return;
             } else {
@@ -41,7 +41,7 @@ $(document).ready(function () {
         }
     }
 
-    $('.press-any').html('Instructions:\nYou will be given a random number of Crystals to collect in this game.\nTo collect crystals you will need to click on any of the 4 images of crystals present. Each image will represent a different random amount.\nThe goal is to collect the same amount of crystals as is needed without going over or you lose!\n\nGood Luck!\n\nPress Any Key to Start!')
+    $('.press-any').html('Instructions:\nYou will be given a random number of Crystals to collect in this game.\nTo collect crystals you will need to click on any of the 4 images of crystals present. Each image will represent a different random amount.\nThe goal is to collect the same amount of crystals as is needed without going over or you lose!\n\nGood Luck!\n\nClick Anywhere to Start!')
 
     $('.instructions').html('Instructions:\nClick an image to collect crystals.\nEach image is a random amount and a new random amount each round.\nTry to get the crystals needed exactly or you lose!')
 
