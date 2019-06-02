@@ -11,6 +11,40 @@ $(document).ready(function () {
     let userLosses = 0;
     let userWins = 0;
     let congrats = $('congratulation');
+    let gameStart = false;
+    let hiddenGame = false;
+
+
+    $(document).on('keyup', function () {
+        gameStart = true;
+        hiddenGame = true;
+    });
+
+    function pressAny() {
+        document.onkeyup = function () {
+            if (gameStart = false) {
+                return;
+            } else {
+                beginGame();
+            }
+        }
+    };
+    pressAny();
+
+    $('.hidden').hide();
+
+    function beginGame() {
+        if (hiddenGame = false) {
+            return;
+        } else {
+            $('.hidden').show();
+            $('.press-any').empty();
+        }
+    }
+
+    $('.press-any').html('Instructions:\nYou will be given a random number of Crystals to collect in this game.\nTo collect crystals you will need to click on any of the 4 images of crystals present. Each image will represent a different random amount.\nThe goal is to collect the same amount of crystals as is needed without going over or you lose!\n\nGood Luck!\n\nPress Any Key to Start!')
+
+
 
     function resetGame() {
         userScoreDisplay.empty();
