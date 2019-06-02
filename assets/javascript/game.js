@@ -1,24 +1,49 @@
 $(document).ready(function () {
 
+    let gameTotalDisplay = $('#game-total')
     let userScoreDisplay = $('#user-score')
     let userScore = 0;
     let crystalTotal = Math.floor(Math.random() * 101) + 19;
     let crystal1 = Math.floor(Math.random() * 12) + 1;
-    let num1 = parseInt(crystal1);
     let crystal2 = Math.floor(Math.random() * 12) + 1;
-    let num2 = parseInt(crystal2);
     let crystal3 = Math.floor(Math.random() * 12) + 1;
-    let num3 = parseInt(crystal3);
     let crystal4 = Math.floor(Math.random() * 12) + 1;
-    let num4 = parseInt(crystal4);
     let userLosses = 0;
     let userWins = 0;
+    let congrats = $('congratulation');
 
+    function resetGame() {
+        userScoreDisplay.empty();
+        userScore = 0;
+        userScoreDisplay.html(userScore);
+        gameTotalDisplay.empty();
+        crystalTotal = 0;
+        crystalTotal = Math.floor(Math.random() * 101) + 19;
+        gameTotalDisplay.html(crystalTotal);
+        crystal1 = 0;
+        crystal1 = Math.floor(Math.random() * 12) + 1;
+        crystal2 = 0;
+        crystal2 = Math.floor(Math.random() * 12) + 1;
+        crystal3 = 0;
+        crystal3 = Math.floor(Math.random() * 12) + 1;
+        crystal4 = 0;
+        crystal4 = Math.floor(Math.random() * 12) + 1;
+    }
 
+    function gameOver() {
+        if (userScore > crystalTotal) {
+            congrats.html('You lose');
+            $('#losses').html(userLosses = userLosses + 1);
+            resetGame();
+        } else if (userScore === crystalTotal) {
+            congrats.html('You Won!');
+            $('#wins').html(userWins = userWins + 1);
+            resetGame();
+        } else {
+            return;
+        }
+    }
 
-    userScoreDisplay.html(userScore);
-    $('#game-total').html(crystalTotal);
-    console.log(crystalTotal)
 
     $('#crystal1').on('click', function () {
         console.log(crystal1)
@@ -44,21 +69,10 @@ $(document).ready(function () {
         gameOver()
     });
 
-    $('#congratulation').html()
     $('#wins').html(userWins)
     $('#losses').html(userLosses)
 
-    function gameOver() {
-        if (userScore > crystalTotal) {
-            $('#congratulation').html('You lose');
-            $('#losses').html(userLosses++);
-            // resetGame();
-        } else if (userScore === crystalTotal) {
-            $('#congratulation').html('You Won!');
-            $('#wins').html(userWins++);
-            // resetGame();
-        } else {
-            return;
-        }
-    }
+    userScoreDisplay.html(userScore);
+    gameTotalDisplay.html(crystalTotal);
+    console.log(crystalTotal)
 });
