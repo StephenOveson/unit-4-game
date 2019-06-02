@@ -15,11 +15,11 @@ $(document).ready(function () {
     function resetGame() {
         userScoreDisplay.empty();
         userScore = 0;
-        userScoreDisplay.html(userScore);
+        userScoreDisplay.html('Crystals Collected ' + userScore);
         gameTotalDisplay.empty();
         crystalTotal = 0;
         crystalTotal = Math.floor(Math.random() * 101) + 19;
-        gameTotalDisplay.html(crystalTotal);
+        gameTotalDisplay.html('Crystals Needed ' + crystalTotal);
         crystal1 = 0;
         crystal1 = Math.floor(Math.random() * 12) + 1;
         crystal2 = 0;
@@ -33,11 +33,11 @@ $(document).ready(function () {
     function gameOver() {
         if (userScore > crystalTotal) {
             congrats.html('You lose');
-            $('#losses').html(userLosses = userLosses + 1);
+            $('#losses').html('Losses ' + (userLosses = userLosses + 1));
             resetGame();
         } else if (userScore === crystalTotal) {
             congrats.html('You Won!');
-            $('#wins').html(userWins = userWins + 1);
+            $('#wins').html('Wins ' + (userWins = userWins + 1));
             resetGame();
         } else {
             return;
@@ -47,32 +47,32 @@ $(document).ready(function () {
 
     $('#crystal1').on('click', function () {
         console.log(crystal1)
-        userScoreDisplay.html(userScore = userScore + crystal1);
+        userScoreDisplay.html('Crystals Collected ' + (userScore = userScore + crystal1));
         gameOver()
     });
 
     $('#crystal2').on('click', function () {
         console.log(crystal2)
-        userScoreDisplay.html(userScore = userScore + crystal2);
+        userScoreDisplay.html('Crystals Collected ' + (userScore = userScore + crystal2));
         gameOver()
     });
 
     $('#crystal3').on('click', function () {
         console.log(crystal3)
-        userScoreDisplay.html(userScore = userScore + crystal3);
+        userScoreDisplay.html('Crystals Collected ' + (userScore = userScore + crystal3));
         gameOver()
     });
 
     $('#crystal4').on('click', function () {
         console.log(crystal4)
-        userScoreDisplay.html(userScore = userScore + crystal4);
+        userScoreDisplay.html('Crystals Collected ' + (userScore = userScore + crystal4));
         gameOver()
     });
 
-    $('#wins').html(userWins)
-    $('#losses').html(userLosses)
+    $('#wins').html('Wins ' + userWins)
+    $('#losses').html('Losses ' + userLosses)
 
-    userScoreDisplay.html(userScore);
-    gameTotalDisplay.html(crystalTotal);
+    userScoreDisplay.html('Crystals Collected ' + userScore);
+    gameTotalDisplay.html('Crystals Needed ' + crystalTotal);
     console.log(crystalTotal)
 });

@@ -1,10 +1,19 @@
 body {
     background-image: url('../images/background-image.jpg');
     font-family: 'Righteous', cursive;
-    font-size: 50px;
+    font-size: 60px;
+    margin: auto;
+    text-align: center;
+    font-weight: 900;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
 }
-
 
 img {
     max-width: 150px;
+}
+
+.main {
+    max-width: 960px;
+    margin: auto;
 }
