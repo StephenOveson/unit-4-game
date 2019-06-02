@@ -14,7 +14,6 @@ $(document).ready(function () {
     let gameStart = false;
     let hiddenGame = false;
 
-
     $(document).on('keyup', function () {
         gameStart = true;
         hiddenGame = true;
@@ -83,6 +82,7 @@ $(document).ready(function () {
         console.log(crystal1)
         userScoreDisplay.html('Crystals Collected ' + (userScore = userScore + crystal1));
         gameOver()
+        initAudio();
     });
 
     $('#crystal2').on('click', function () {
